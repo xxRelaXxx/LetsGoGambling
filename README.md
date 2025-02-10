@@ -101,6 +101,9 @@ Implementare statistiche di base per mostrare il valore atteso (EV) e il vantagg
 Considerare l’aggiunta di una modalità educativa con spiegazioni sulle probabilità e sul perché i casinò vincono sempre a lungo termine.
 
 
+
+# Suddivisione del lavoro
+
 1) Menu iniziali (Rajiv)
 2) Classi iniziali (Player, Bot, Game...) (Shaaek)
 3) Gioco Dadi (Roman aka.RelaX)
@@ -109,4 +112,230 @@ Considerare l’aggiunta di una modalità educativa con spiegazioni sulle probab
 6) Gioco Slot (Jeremy)
 7) Grafico (parte finale)
 8) FileManager (parte finale)
-   
+
+
+
+
+
+
+# Diagramma delle Classi (Generata al momento dal chatGPT, quindi è solamente un riferimento)
+
+Il progetto è strutturato con un'architettura ad ereditarietà e composizione, utilizzando il principio della programmazione ad oggetti per garantire modularità e scalabilità.
+
+
+---
+
+1. Classe Astratta Game (Superclasse per tutti i giochi)
+
+Descrizione:
+Rappresenta un gioco d'azzardo generico. Ogni gioco specifico (Craps, Roulette, etc.) eredita da questa classe e implementa le proprie regole.
+
+Attributi:
+
+String name → Nome del gioco.
+
+double houseEdge → Vantaggio della casa espresso in percentuale.
+
+Random random → Generatore casuale per le scommesse.
+
+
+Metodi Astratti:
+
+public abstract double playRound(double bet); → Simula una singola giocata e restituisce il guadagno o la perdita.
+
+public abstract String getRules(); → Restituisce una descrizione delle regole del gioco.
+
+
+
+---
+
+2. Sottoclassi di Game (Singoli Giochi)
+
+Tutte le classi seguenti estendono Game, implementando il metodo playRound().
+
+2.1. Classe Craps
+
+Attributi Specifici:
+
+int dice1, dice2 → Valori dei dadi lanciati.
+
+
+Metodi:
+
+public double playRound(double bet);
+
+public String getRules();
+
+
+
+---
+
+2.2. Classe GuessNumber
+
+Attributi Specifici:
+
+int chosenNumber → Numero scelto dall'utente.
+
+int drawnNumber → Numero casuale generato.
+
+
+Metodi:
+
+public double playRound(double bet);
+
+public String getRules();
+
+
+
+---
+
+2.3. Classe Roulette
+
+Attributi Specifici:
+
+String betType → Tipo di scommessa (rosso/nero, pari/dispari, numero esatto).
+
+int winningNumber → Numero estratto dalla roulette.
+
+
+Metodi:
+
+public double playRound(double bet);
+
+public String getRules();
+
+
+
+---
+
+2.4. Classe SlotMachine
+
+Attributi Specifici:
+
+int[] reels → Array di numeri casuali rappresentanti i rulli della slot.
+
+
+Metodi:
+
+public double playRound(double bet);
+
+public String getRules();
+
+
+
+---
+
+3. Classe Player (Giocatore)
+
+Attributi:
+
+String name → Nome del giocatore.
+
+double capital → Capitale attuale del giocatore.
+
+
+Metodi:
+
+public void placeBet(double amount, Game game); → Effettua una scommessa su un gioco specifico.
+
+public boolean isBankrupt(); → Restituisce true se il capitale è finito.
+
+
+
+---
+
+4. Classe ComputerOpponent
+
+Descrizione:
+Simula l'avversario virtuale che gestisce il banco.
+
+Attributi:
+
+double totalEarnings → Guadagni complessivi del banco.
+
+
+Metodi:
+
+public void collectBet(double amount); → Registra una scommessa persa dal giocatore.
+
+public void payOut(double amount); → Paga una vincita al giocatore.
+
+
+
+---
+
+5. Classe GameSession
+
+Descrizione:
+Gestisce una sessione di gioco, tenendo traccia delle statistiche e della storia delle scommesse.
+
+Attributi:
+
+Player player → Giocatore della sessione.
+
+List<Game> games → Lista dei giochi disponibili.
+
+int totalRounds → Numero di giocate effettuate.
+
+
+Metodi:
+
+public void start(); → Avvia la sessione e permette all’utente di giocare.
+
+public void printStatistics(); → Mostra i dati di sessione (capitale rimanente, numero di scommesse).
+
+
+
+---
+
+6. Classe AutomatedGameSession (Sottoclasse di GameSession)
+
+Descrizione:
+Gestisce il gioco automatico con strategie predefinite.
+
+Attributi Specifici:
+
+Map<Game, Double> gameAllocation → Percentuale di scommesse assegnata a ciascun gioco.
+
+boolean recklessMode → Se attivo, effettua puntate ad alto rischio.
+
+
+Metodi:
+
+public void runSimulation(); → Simula il gioco automatico e aggiorna il capitale.
+
+
+
+---
+
+7. Classe DataLogger (Gestione File e Dati Storici)
+
+Descrizione:
+Si occupa di salvare le statistiche del gioco per analisi future.
+
+Metodi:
+
+public static void saveRecord(String playerName, double maxCapital, int maxLosingStreak); → Salva un record nel file di dati.
+
+public static List<String> loadRecords(); → Carica e restituisce la lista dei record salvati.
+
+
+
+---
+
+8. Classe GraphicalUI (Interfaccia Utente con JavaFX)
+
+Descrizione:
+Gestisce l'interfaccia grafica, consentendo all’utente di selezionare giochi, visualizzare statistiche e impostare la modalità automatica.
+
+Metodi:
+
+public void start(Stage primaryStage); → Avvia l’interfaccia JavaFX.
+
+private void displayMainMenu(); → Mostra il menu principale.
+
+private void startManualGame(); → Avvia una sessione manuale.
+
+private void startAutomatedGame(); → Avvia una sessione automatizzata.
+
+private void showStatistics(); → Mostra le statistiche su schermo.
