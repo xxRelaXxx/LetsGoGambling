@@ -99,3 +99,14 @@ Il sistema deve consentire l’esportazione dei dati per analisi approfondite.
 Implementare statistiche di base per mostrare il valore atteso (EV) e il vantaggio della casa.
 
 Considerare l’aggiunta di una modalità educativa con spiegazioni sulle probabilità e sul perché i casinò vincono sempre a lungo termine.
+
+
+1) Menu iniziali (Rajiv)
+2) Classi iniziali (Player, Bot, Game...) (Shaaek)
+3) Gioco Dadi (Roman aka.RelaX)
+4) Gioco Indovina numero (Tondo)
+5) Gioco Roulette (Pisy)
+6) Gioco Slot (Jeremy)
+7) Grafico (parte finale)
+8) FileManager (parte finale)
+   
