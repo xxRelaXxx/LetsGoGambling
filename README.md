@@ -119,7 +119,7 @@ Considerare l’aggiunta di una modalità educativa con spiegazioni sulle probab
 3) Gioco Dadi (Roman aka.RelaX): gico con 2/3 dadi (dipende dalla difficoltà), stai lanciando i tuoi dadi contro i dadi del Bot, chi avra la somma maggiore - vince.(In base della differenza delle somme finali si calcola il moltiplicatore per il Bet messo).
 
 
-4) Gioco Indovina numero (Tondo): potrai al inizio di ogni round di sceglire un intervallo di numeri (1-10, 1-20, 1-30, 1-40, 1-50), alla base del intervallo scelto il sistema ti assegna il moltiplicatore per il tuo Bet (intervallo più ampio - Bet più grande) e Bot sceglie un numero da questo intervallo, dopo di che, con ogni prova di indovinare il numero scelto dal Bot il moltiplicatore diminuisce. Facendo tante scelte sbagliate (senza indovinare il numero del Bot) il moltiplicatore diminuirà, dopo di che potrà diventare negativo e scattare i chip.
+4) Gioco Indovina numero (Tondo): potrai al inizio di ogni round di sceglire un intervallo di numeri (1-10, 1-20, 1-30, 1-40, 1-50), alla base del intervallo scelto il sistema ti assegna il moltiplicatore per il tuo Bet (intervallo più ampio - moltiplicatore più grande) e Bot sceglie un numero da questo intervallo, dopo di che, con ogni prova di indovinare il numero scelto dal Bot il moltiplicatore diminuisce. Facendo tante scelte sbagliate (senza indovinare il numero del Bot) il moltiplicatore diminuirà, dopo di che potrà diventare negativo e scattare i chip.
 
 
 5) Gioco Roulette (Pisy): un gioco classico di roulette americana(con piccoli cambiamenti per raffacilitare la programmazione), sono sicuro che Pisy sa gia cosa deve fare.(In realtà non conosco le regole)
