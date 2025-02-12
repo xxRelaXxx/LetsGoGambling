@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+
+<BorderPane prefHeight="1080" prefWidth="1920" style="-fx-background-color: #f4f4f4; -fx-padding: 20px;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.DiceGameController">
+
+    <!-- 🔺 Top: Bot's Dice -->
+    <top>
+        <VBox alignment="CENTER" spacing="20">
+            <Label style="-fx-font-size: 32px; -fx-font-weight: bold;" text="Bot's Dice" />
+            <HBox alignment="CENTER" spacing="40">
+                <StackPane fx:id="BotDiceContainer1" prefHeight="300" prefWidth="300" style="-fx-border-color: black; -fx-border-width: 2px; -fx-border-radius: 30;">
+				    <ImageView fx:id="botDiceImage1" fitHeight="300" fitWidth="300" opacity="0" preserveRatio="true" />
+				</StackPane>
+				
+				<StackPane fx:id="BotDiceContainer2" prefHeight="300" prefWidth="300" style="-fx-border-color: black; -fx-border-width: 2px; -fx-border-radius: 30;">
+				    <ImageView fx:id="botDiceImage2" fitHeight="300" fitWidth="300" opacity="0" preserveRatio="true" />
+				</StackPane>
+            </HBox>
+        </VBox>
+    </top>
+    
+    <!-- ⚡ Center: Game Controls -->
+    <center>
+    	
+        <VBox alignment="CENTER" spacing="30">
+         <HBox prefHeight="100.0" prefWidth="200.0" style="-fx-alignment: center; -fx-spacing: 30;">
+            <children>
+               <Label style="-fx-font-size: 28; -fx-pref-width: 150;" text="Money: " />
+               <Label fx:id="moneyLabel" style="-fx-font-size: 28;" text="100$" />
+            </children>
+         </HBox>
+         
+         <HBox prefHeight="100.0" prefWidth="200.0" style="-fx-alignment: center;">
+            <children>
+               <Label style="-fx-font-size: 28;" text="Bet: " />
+               <TextField fx:id="betInput" style="-fx-font-size: 24;" text="Enter Bet" />
+            </children>
+         </HBox>
+            
+
+            <!-- 🎲 Roll Button -->
+            <Button fx:id="rollButton" onAction="#rollDice" style="-fx-font-size: 28px; -fx-padding: 15px 30px;" text="Roll Dice" />
+
+            <!-- 🎯 Result Labels -->
+            <Label fx:id="resultLabel" style="-fx-font-size: 28px; -fx-text-fill: #FF0000;" text="Place your bet and roll the dice!" />
+            <Label fx:id="multiplierLabel" style="-fx-font-size: 28px; -fx-text-fill: #008000;" text="Multiplier: 1x" />
+        </VBox>
+    </center>
+
+    <!-- 🔻 Bottom: Player's Dice -->
+    <bottom>
+        <VBox alignment="CENTER" spacing="20">
+            <Label style="-fx-font-size: 32px; -fx-font-weight: bold;" text="Player's Dice" />
+            <HBox alignment="CENTER" spacing="40">
+                <StackPane fx:id="PlayerDiceContainer1" prefHeight="300" prefWidth="300" style="-fx-border-color: black; -fx-border-width: 2px; -fx-border-radius: 30;">
+				    <ImageView fx:id="playerDiceImage1" fitHeight="300" fitWidth="300" opacity="0" preserveRatio="true" />
+				</StackPane>
+				
+				<StackPane fx:id="PlayerDiceContainer2" prefHeight="300" prefWidth="300" style="-fx-border-color: black; -fx-border-width: 2px; -fx-border-radius: 30;">
+				    <ImageView fx:id="playerDiceImage2" fitHeight="300" fitWidth="300" opacity="0" preserveRatio="true" />
+				</StackPane>
+            </HBox>
+        </VBox>
+    </bottom>
+    
+</BorderPane>
