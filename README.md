@@ -22,7 +22,7 @@ A core feature is the **Auto-Simulation Mode**, a statistical tool designed to s
 * **Advanced Analytics:** Real-time charting of financial trends and win/loss rates.
 
 ## 👥 The Team
-* **Roman Bernatskyi** - Project Manager, Statistics & Charts, Auto-Simulation Engine, Dice Game
+* **Roman Bernatskyi**(me) - Project Manager, Statistics & Charts, Auto-Simulation Engine, Dice Game
 * **Rajiv Subramaniam** - Menu Systems, File/Account Management, Coordination
 * **Alessandro Tondo** - UI/UX Graphics (Photoshop), Guess the Number, Documentation
 * **Jeremias Arteaga** - UI/UX Graphics (Photoshop), Slot Machine
