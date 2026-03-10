@@ -15,7 +15,7 @@ A core feature is the **Auto-Simulation Mode**, a statistical tool designed to s
 ![SceneBuilder](https://img.shields.io/badge/Tools-SceneBuilder-lightgrey)
 ![Photoshop](https://img.shields.io/badge/Design-Adobe_Photoshop-darkblue)
 
-## ✨ Key Features
+## ✨ Key Features of the Project
 * **Manual Mode:** First-person gaming experience to test emotional control.
 * **Auto-Simulation Mode:** A powerful statistical engine that automates gameplay to generate data on long-term loss ratios.
 * **Account System:** Encrypted local data storage for secure user sessions.
